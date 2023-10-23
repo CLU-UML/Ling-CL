@@ -4,17 +4,17 @@ from datetime import datetime
 from torch import nn
 from torch.optim import SGD
 from transformers import AutoModel, AutoConfig
-from superloss import SuperLoss
-from spl import SPL
-from lng_curr import LngCurriculum
-from mentornet import MentorNet
-from glf_curr import GLFCurriculum
-from sig_curr import SigmoidCurriculum
-from gauss_curr import GaussCurriculum
-from sampling_curr import SamplingCurriculum
-from competence_curr import CompetenceCurriculum
-from diff_pred_weighting import DPWeighting
-from data_sel_curr import DataSelCurriculum
+from curricula.superloss import SuperLoss
+from curricula.spl import SPL
+from curricula.lng_curr import LngCurriculum
+from curricula.mentornet import MentorNet
+from curricula.glf_curr import GLFCurriculum
+from curricula.sig_curr import SigmoidCurriculum
+from curricula.gauss_curr import GaussCurriculum
+from curricula.sampling_curr import SamplingCurriculum
+from curricula.competence_curr import CompetenceCurriculum
+from curricula.diff_pred_weighting import DPWeighting
+from curricula.data_sel_curr import DataSelCurriculum
 from transformers import AutoModel, AutoTokenizer, AdamW, AutoConfig
 from transformers import get_linear_schedule_with_warmup
 import numpy as np
