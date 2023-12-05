@@ -3,11 +3,6 @@
 The linguistic curriculum learning algorithm has three features. a) Estimating the importance of linguistic indices using a data-driven approach, b) The application of a "linguistic curriculum" to enhance the model's performance from a linguistic perspective, and c) Identifying the core set of linguistic indices needed to learn a task. This tool also evaluates the model's ability to handle different linguistic indices.
 
 ## Ling-CL
-<p align="center">
-<img src="https://github.com/CLU-UML/Ling-CL/assets/22674819/c34524d8-4bba-48d0-8b97-c3d442a60c1f" alt="drawing" height="300"/>
-<img src="https://github.com/CLU-UML/Ling-CL/assets/22674819/30067f04-8b8a-466c-922c-4506c0dfc5b1" alt="drawing" height="300"/>
-</p>
-
 In order to apply the correlation or optimization approaches of linguistic indices importance estimation, use the following options.
 
 `python train.py --diff_score lng_w --lng_method [opt OR corr]`
