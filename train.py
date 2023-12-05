@@ -14,34 +14,12 @@ from scipy.stats import pearsonr
 from tqdm import tqdm
 from math import ceil
 from const import *
-from utils import ignore_padding_flatten
+from utils.utils import ignore_padding_flatten, calc_bal_acc
 logging.set_verbosity_error()
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 mean = lambda l: sum(l)/len(l) if len(l) > 0 else 0.
-
-num_bins = 5
-def calc_bal_acc(labels, preds, metric, name, ids_map):
-    bins = np.histogram_bin_edges(metric, bins=num_bins)
-    bin_ids = []
-    for i in range(len(bins)):
-        if i == (len(bins) - 1):
-            ids = (metric >= bins[i])
-        else:
-            ids = (metric >= bins[i]) & (metric < bins[i+1])
-        if sum(ids) == 0:
-            continue
-        bin_ids.append(ids)
-    score_bins = []
-    for ids in bin_ids:
-        if len(ids_map) > 0:
-            ids = [ids_map[idx] for idx, val in enumerate(ids) if val == True]
-            ids = [x for y in ids for x in y]
-            ids = np.array(ids, dtype=int)
-        score = recall_score(labels[ids], preds[ids], average='macro')
-        score_bins.append(score)
-    return mean(score_bins)
 
 class Trainer():
     def __init__(self, args, writer, device, dataloader, lng_names=None, lng_ids=None, name=None, glf_cfg=None):
