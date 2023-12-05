@@ -66,6 +66,8 @@ elif 'sentence' in data['train'].column_names:
     lens = [len(word_tokenize(x)) for x in data['train']['sentence']]
     standard = int(np.percentile(lens, 20))
 
+data = data.map(process_s); exit()
+
 data = data.map(process_l,
         # num_proc=128,
         num_proc=30,
@@ -82,4 +84,4 @@ data = data.map(process_s,
 
 print(data)
 
-data.save_to_disk(dataset)
+#data.save_to_disk(dataset)

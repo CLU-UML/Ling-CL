@@ -77,10 +77,13 @@ def sca(input_text):
 
 #parse the input file
     command=[parserPath, inputFile]
+    from time import time
+    t0 = time()
     with open(parsedFile, 'w') as f:
         subprocess.run(command, stdout = f,
                 stderr = subprocess.DEVNULL
                 )
+    print(time() - t0); t0 = time()
 
 
 #list of counts of the patterns
@@ -95,6 +98,7 @@ def sca(input_text):
         else:
             count = 0
         patterncount.append(count)
+    print(time() - t0); t0 = time()
 
 #update frequencies of complex nominals, clauses, and T-units
     patterncount[7]=patterncount[-4]+patterncount[-5]+patterncount[-6]

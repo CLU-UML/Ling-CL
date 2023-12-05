@@ -1,0 +1,60 @@
+(ROOT
+  (S
+    (NP
+      (NP (NNP Pierre) (NNP Vinken))
+      (, ,)
+      (ADJP
+        (NP (CD 61) (NNS years))
+        (JJ old))
+      (, ,))
+    (VP (MD will)
+      (VP (VB join)
+        (NP (DT the) (NN board))
+        (PP (IN as)
+          (NP (DT a) (JJ nonexecutive) (NN director)))
+        (NP (NNP Nov.) (CD 29))))
+    (. .)))
+
+compound(Vinken-2, Pierre-1)
+nsubj(join-9, Vinken-2)
+nummod(years-5, 61-4)
+obl:npmod(old-6, years-5)
+amod(Vinken-2, old-6)
+aux(join-9, will-8)
+root(ROOT-0, join-9)
+det(board-11, the-10)
+obj(join-9, board-11)
+case(director-15, as-12)
+det(director-15, a-13)
+amod(director-15, nonexecutive-14)
+obl:as(join-9, director-15)
+obl:tmod(join-9, Nov.-16)
+nummod(Nov.-16, 29-17)
+
+(ROOT
+  (S
+    (NP (NNP Mr.) (NNP Vinken))
+    (VP (VBZ is)
+      (NP
+        (NP (NN chairman))
+        (PP (IN of)
+          (NP
+            (NP (NNP Elsevier) (NNP N.V.))
+            (, ,)
+            (NP (DT the)
+              (NML (JJ Dutch) (NN publishing))
+              (NN group))))))
+    (. .)))
+
+compound(Vinken-2, Mr.-1)
+nsubj(chairman-4, Vinken-2)
+cop(chairman-4, is-3)
+root(ROOT-0, chairman-4)
+case(N.V.-7, of-5)
+compound(N.V.-7, Elsevier-6)
+nmod:of(chairman-4, N.V.-7)
+det(group-12, the-9)
+amod(publishing-11, Dutch-10)
+compound(group-12, publishing-11)
+appos(N.V.-7, group-12)
+
